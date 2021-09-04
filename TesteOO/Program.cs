@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
 
 namespace TesteOO
 {
@@ -10,33 +9,32 @@ namespace TesteOO
         static void Main(string[] args)
         {
 
-
             //Exemplo 1 - Teste de Dictionary<int,value>
-            //TesteDictionary();
+            TesteDictionary();
 
             // Exemplo 2 - Iteração com List<T>
-            // TesteList();
+            //TesteList();
 
             //Exemplo 3 - Teste Queue<T>
-            //TesteQueueT();
+           // TesteQueueT();
 
             //Exemplo 4 - SortedList < Tkey,Tvalue >
-            // TesteSortedListT();
+             //TesteSortedListT();
 
             //Exemplo 5 - Stack<T>
             //TesteStackT();
 
             //Exemplo 6- ArrayList
-            // TesteArrayList();
+             //TesteArrayList();
 
             //Exemplo 7 - HashTable
             //TesteHashTable();
 
             //Exemplo 8- Queue
-            // TesteQueue();
+             //TesteQueue();
 
             //Exemplo 9 - Stack
-            //TesteStack();
+           // TesteStack();
 
 
 
@@ -56,6 +54,8 @@ namespace TesteOO
             stackPF.Push(new clsPessoaFisica("Ellen", new DateTime(1986, 01, 28)));
             stackPF.Push(new clsPessoaFisica("Chun Li", new DateTime(2014, 02, 03)));
             stackPF.Push(new clsPessoaFisica("Sindel", new DateTime(2014, 04, 07)));
+
+            //stackPF.Push("Teste");
 
             Console.WriteLine("PF Stack");
             Console.WriteLine("\nQuantidade:    {0}", stackPF.Count);
@@ -191,7 +191,7 @@ namespace TesteOO
             alPessoaFisica.Add(new clsPessoaFisica("Chun Li", new DateTime(2014, 02, 03)));
             alPessoaFisica.Add(new clsPessoaFisica("Sindel", new DateTime(2014, 04, 07)));
 
-            //  alPessoaFisica.Add("Teste");
+            // alPessoaFisica.Add("Teste");
 
             try
             {
@@ -231,7 +231,7 @@ namespace TesteOO
         {
             Stack<clsPessoaFisica> stackPF = new Stack<clsPessoaFisica>();
 
-            //Adicionando item na Queue
+            //Adicionando item na Stack
             stackPF.Push(new clsPessoaFisica("Fulano", new DateTime(1980, 05, 30)));
             stackPF.Push(new clsPessoaFisica("Beltrano", new DateTime(1990, 04, 10)));
             stackPF.Push(new clsPessoaFisica("Ciclano", new DateTime(1995, 02, 25)));
@@ -302,6 +302,11 @@ namespace TesteOO
         {
             Queue<clsPessoaFisica> queuePF = new Queue<clsPessoaFisica>();
 
+            clsPessoaFisica objPessFisica = new clsPessoaFisica();
+            objPessFisica.Nome = "Nome";
+            objPessFisica.DataNascimentoFundacao = new DateTime(1987, 07, 01);
+
+            queuePF.Enqueue(objPessFisica);
             //Adicionando item na Queue
             queuePF.Enqueue(new clsPessoaFisica("Fulano", new DateTime(1980, 05, 30)));
             queuePF.Enqueue(new clsPessoaFisica("Beltrano", new DateTime(1990, 04, 10)));
@@ -332,6 +337,13 @@ namespace TesteOO
         {
             List<clsPessoaFisica> lstPessoaFisica = new List<clsPessoaFisica>();
 
+
+            clsPessoaFisica objPF = new clsPessoaFisica();
+            objPF.Nome = "Nome";
+            objPF.DataNascimentoFundacao = new DateTime(1988, 05, 12);
+
+            lstPessoaFisica.Add(objPF);
+
             lstPessoaFisica.Add(new clsPessoaFisica("Fulano", new DateTime(1980, 05, 30)));
 
             lstPessoaFisica.Add(new clsPessoaFisica("Beltrano", new DateTime(1990, 04, 10)));
@@ -351,25 +363,33 @@ namespace TesteOO
 
             //para iterar a lista
             Console.WriteLine("Percorre lista com tipo var");
-            foreach (var objPF in lstPessoaFisica)
+            foreach (var objPFisica in lstPessoaFisica)
             {
-                Console.WriteLine(objPF.Nome);
+                Console.WriteLine(objPFisica.Nome);
             }
 
             Console.WriteLine("Percorre lista com objeto");
-            foreach (clsPessoaFisica objPF in lstPessoaFisica)
+            foreach (clsPessoaFisica objPFisica in lstPessoaFisica)
             {
-                Console.WriteLine(objPF.Nome);
+                Console.WriteLine(objPFisica.Nome);
             }
 
 
         }
+        
         /// <summary>
         /// Exemplo 1 - Teste de Dictionary<int,value>
         /// </summary>
         static void TesteDictionary()
         {
             Dictionary<int, clsPessoaFisica> dicPessoaFisica = new Dictionary<int, clsPessoaFisica>();
+
+
+            clsPessoaFisica objPessoa = new clsPessoaFisica();
+            objPessoa.Nome = "Nome";
+            objPessoa.DataNascimentoFundacao = new DateTime(1990, 11, 03);
+
+            dicPessoaFisica.Add(100, objPessoa);
 
             dicPessoaFisica.Add(1, new clsPessoaFisica("Fulano", new DateTime(1980, 05, 30)));
 
@@ -413,6 +433,10 @@ namespace TesteOO
             lstInt.Add(3);
 
             lstInt.Remove(1);
+
+
+            List<clsPessoaFisica> listaPF = new List<clsPessoaFisica>();
+            List<string> lstString = new List<string>();
         }
         
     }
